@@ -55,7 +55,7 @@ public class BackgroundTimerService extends Service {
 
         timerStarted = true;
         PluginSettings.setEnabled(true);
-        mAlarmManager.setRepeating(AlarmManager.RTC_WAKEUP, PluginSettings.getStartTime(), PluginSettings.getTimerInterval(), mTimerPendingIntent);
+        mAlarmManager.setExact(AlarmManager.RTC_WAKEUP, PluginSettings.getTimerInterval(), mTimerPendingIntent);
     }
 
     private void stop() {
